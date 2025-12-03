@@ -1,204 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zayra Trenzy - Crazy Fashion Outlet (Full)</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #f093fb); min-height: 100vh; animation: gradientShift 10s ease infinite; }
-        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; }
-        }
-        .hero { background: linear-gradient(45deg, #ff9a9e, #fecfef, #a8edea); height: 420px; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=600&q=80') no-repeat center center; background-size: cover; opacity: 0.22; z-index: -1; }
-        .product-card { margin-bottom: 20px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s; background: rgba(255,255,255,0.95); }
-        .product-card:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
-        .sale-badge { position: absolute; top: 10px; left: 10px; background: red; color: white; padding: 5px 10px; border-radius: 10px; font-weight: bold; z-index: 10; }
-        .btn-primary { background: linear-gradient(45deg, #ff9a9e, #fecfef); border: none; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
-        .btn-danger { background: linear-gradient(45deg, #ff6b6b, #ee5a24); border: none; }
-        .navbar { background: linear-gradient(90deg, #a8edea, #fed6e3); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        footer { background: linear-gradient(90deg, #667eea, #764ba2); color: white; }
-        .cart-icon { position: relative; }
-        .cart-badge { position: absolute; top: -10px; right: -10px; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; }
-        .flash-sale { background: linear-gradient(45deg, #ff0000, #ff9900); color: white; padding: 10px; text-align: center; font-weight: bold; animation: blink 1s infinite; }
-        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0.5; } }
-        .contact-pill { background: rgba(255,255,255,0.6); padding: 6px 12px; border-radius: 30px; font-weight: 600; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zayra Trenzy - Crazy Fashion Outlet (INR)</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg,#ff6b6b,#4ecdc4,#45b7d1,#f093fb); min-height:100vh; }
+    .hero { background: linear-gradient(45deg,#ff9a9e,#fecfef,#a8edea); height:420px; display:flex; align-items:center; justify-content:center; color:#fff; text-align:center; }
+    .product-card { margin-bottom:20px; border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+    .sale-badge { position:absolute; top:10px; left:10px; background:red; color:#fff; padding:6px 10px; border-radius:8px; font-weight:700; }
+    .flash-sale { background:linear-gradient(45deg,#ff0000,#ff9900); color:#fff; padding:10px; text-align:center; font-weight:700; }
+    footer{background:linear-gradient(90deg,#667eea,#764ba2); color:#fff}
+    .cart-badge{position: absolute; top:-10px; right:-10px; background:red; color:#fff; border-radius:50%; padding:2px 6px; font-size:12px}
+    .contact-pill{background:rgba(255,255,255,0.7); padding:6px 12px; border-radius:30px; font-weight:600;}
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-dark" href="#"><i class="fas fa-bolt"></i> Zayra Trenzy</a>
-            <div class="d-flex align-items-center gap-3 ms-auto me-3">
-                <div class="contact-pill"><i class="fas fa-phone"></i> +91 9167343276</div>
-                <a href="#" class="nav-link cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
-                    <i class="fas fa-shopping-cart fa-lg"></i> <span class="ms-1">Cart</span> <span class="cart-badge" id="cart-count">0</span>
-                </a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container text-center">
-            <h1 class="display-4">Welcome to Zayra Trenzy</h1>
-            <p class="lead">Crazy Fashion for the Bold! Unleash Your Style.</p>
-            <a href="#mens" class="btn btn-primary btn-lg me-2">Shop Men's</a>
-            <a href="#womens" class="btn btn-danger btn-lg">Shop Women's</a>
-        </div>
-    </section>
-
-    <!-- FLASH SALE -->
-    <div class="flash-sale">🔥 FLASH SALE: 50% OFF — LIMITED TIME! 🔥</div>
-
-    <!-- MEN SECTION -->
-    <section id="mens" class="py-5" style="background:#f3e5f5">
-        <div class="container">
-            <h2 class="text-center mb-4 text-dark">Men's Clothing</h2>
-            <div class="row">
-                <div class="col-md-4 position-relative">
-                    <div class="sale-badge">Sale!</div>
-                    <div class="product-card card">
-                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d" class="card-img-top">
-                        <div class="card-body">
-                            <h5>Classic Men's Jeans</h5>
-                            <p><del>$59.99</del> <strong>$29.99</strong></p>
-                            <button class="btn btn-primary add-to-cart" data-name="Classic Men's Jeans" data-price="29.99">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 position-relative">
-                    <div class="sale-badge">Sale!</div>
-                    <div class="product-card card">
-                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" class="card-img-top">
-                        <div class="card-body">
-                            <h5>Graphic Men's T-Shirt</h5>
-                            <p><del>$24.99</del> <strong>$14.99</strong></p>
-                            <button class="btn btn-primary add-to-cart" data-name="Graphic Men's T-Shirt" data-price="14.99">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 position-relative">
-                    <div class="sale-badge">Sale!</div>
-                    <div class="product-card card">
-                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5" class="card-img-top">
-                        <div class="card-body">
-                            <h5>Leather Men's Jacket</h5>
-                            <p><del>$99.99</del> <strong>$49.99</strong></p>
-                            <button class="btn btn-primary add-to-cart" data-name="Leather Men's Jacket" data-price="49.99">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- WOMEN SECTION -->
-    <section id="womens" class="py-5" style="background:#fff3e0">
-        <div class="container">
-            <h2 class="text-center mb-4 text-dark">Women's Clothing</h2>
-
-            <div class="row">
-                <div class="col-md-4 position-relative">
-                    <div class="sale-badge">Sale!</div>
-                    <div class="product-card card">
-                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8" class="card-img-top">
-                        <div class="card-body">
-                            <h5>Summer Dress</h5>
-                            <p><del>$49.99</del> <strong>$24.99</strong></p>
-                            <button class="btn btn-danger add-to-cart" data-name="Summer Dress" data-price="24.99">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 position-relative">
-                    <div class="sale-badge">Sale!</div>
-                    <div class="product-card card">
-                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7" class="card-img-top">
-                        <div class="card-body">
-                            <h5>Cozy Hoodie</h5>
-                            <p><del>$34.99</del> <strong>$17.49</strong></p>
-                            <button class="btn btn-danger add-to-cart" data-name="Cozy Hoodie" data-price="17.49">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- CART MODAL -->
-    <div class="modal fade" id="cartModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5>Your Cart</h5>
-                    <button class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="cart-items"></div>
-                    <div class="d-flex justify-content-between mt-3">
-                        <h4>Total: $<span id="cart-total">0.00</span></h4>
-                        <button class="btn btn-primary" id="checkout-btn">Checkout</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" style="background:linear-gradient(90deg,#a8edea,#fed6e3)">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#"><i class="fas fa-bolt"></i> Zayra Trenzy</a>
+      <div class="d-flex align-items-center gap-3 ms-auto">
+        <div class="contact-pill"><i class="fas fa-phone"></i> +91 9167343276</div>
+        <a class="nav-link position-relative" data-bs-toggle="modal" data-bs-target="#cartModal" style="cursor:pointer">
+          <i class="fas fa-shopping-cart fa-lg"></i> Cart <span id="cart-count" class="cart-badge">0</span>
+        </a>
+      </div>
     </div>
+  </nav>
 
-    <footer class="text-center py-4 bg-dark text-white">© 2025 Zayra Trenzy — Contact: +91 9167343276</footer>
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1 class="display-4">Welcome to Zayra Trenzy</h1>
+      <p class="lead">Crazy Fashion for the Bold — Prices in ₹ (INR)</p>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="flash-sale">🔥 FLASH SALE: Up to 50% OFF — Limited Time! 🔥</div>
 
-<script>
-const cart = [];
+  <!-- Products -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Men's Clothing</h2>
+      <div class="row g-4">
 
-function updateCart() {
-    let html = "";
-    let total = 0;
+        <div class="col-md-4 position-relative">
+          <div class="sale-badge">SALE</div>
+          <div class="product-card card">
+            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Classic Men's Jeans</h5>
+              <p class="card-text"><del>₹4,999</del> <strong>₹2,499</strong></p>
+              <button class="btn btn-primary add-to-cart" data-name="Classic Men's Jeans" data-price="2499">Add to Cart</button>
+            </div>
+          </div>
+        </div>
 
-    cart.forEach((item, i) => {
-        total += item.price * item.qty;
-        html += `
-        <div class="border p-2 mb-2">
-            <b>${item.name}</b><br>
-            $${item.price} × ${item.qty}
-            <button class="btn btn-sm btn-danger float-end" onclick="removeItem(${i})">Remove</button>
-        </div>`;
+        <div class="col-md-4 position-relative">
+          <div class="sale-badge">SALE</div>
+          <div class="product-card card">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Graphic Men's T-Shirt</h5>
+              <p class="card-text"><del>₹1,999</del> <strong>₹999</strong></p>
+              <button class="btn btn-primary add-to-cart" data-name="Graphic Men's T-Shirt" data-price="999">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 position-relative">
+          <div class="sale-badge">SALE</div>
+          <div class="product-card card">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Leather Men's Jacket</h5>
+              <p class="card-text"><del>₹9,999</del> <strong>₹4,999</strong></p>
+              <button class="btn btn-primary add-to-cart" data-name="Leather Men's Jacket" data-price="4999">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Women's -->
+      <h2 class="text-center my-5">Women's Clothing</h2>
+      <div class="row g-4">
+
+        <div class="col-md-4 position-relative">
+          <div class="sale-badge">SALE</div>
+          <div class="product-card card">
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Summer Women's Dress</h5>
+              <p class="card-text"><del>₹3,499</del> <strong>₹1,749</strong></p>
+              <button class="btn btn-danger add-to-cart" data-name="Summer Women's Dress" data-price="1749">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 position-relative">
+          <div class="sale-badge">SALE</div>
+          <div class="product-card card">
+            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Cozy Women's Hoodie</h5>
+              <p class="card-text"><del>₹2,499</del> <strong>₹1,249</strong></p>
+              <button class="btn btn-danger add-to-cart" data-name="Cozy Women's Hoodie" data-price="1249">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="cart-items"></div>
+
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <h5>Total: ₹<span id="cart-total">0</span></h5>
+            <div>
+              <button class="btn btn-secondary me-2" id="clear-cart">Clear Cart</button>
+              <button class="btn btn-primary" id="proceed-checkout">Proceed to Checkout</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal (multi-step) -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Checkout</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="step-address">
+            <h6>1) Shipping Address</h6>
+            <form id="address-form">
+              <div class="mb-3">
+                <label class="form-label">Full name</label>
+                <input class="form-control" id="addr-name" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Phone</label>
+                <input class="form-control" id="addr-phone" value="+91 9167343276" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Address line 1</label>
+                <input class="form-control" id="addr-line1" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Address line 2 (optional)</label>
+                <input class="form-control" id="addr-line2">
+              </div>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">City</label>
+                  <input class="form-control" id="addr-city" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">State</label>
+                  <input class="form-control" id="addr-state" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">Pincode</label>
+                  <input class="form-control" id="addr-pincode" required>
+                </div>
+              </div>
+              <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-primary" id="to-payment">Continue to Payment</button>
+              </div>
+            </form>
+          </div>
+
+          <div id="step-payment" class="d-none">
+            <h6>2) Payment</h6>
+            <form id="payment-form">
+              <div class="mb-3">
+                <label class="form-label">Name on card</label>
+                <input class="form-control" id="card-name" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Card number</label>
+                <input class="form-control" id="card-number" maxlength="19" placeholder="1234 5678 9012 3456" required>
+              </div>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">Expiry (MM/YY)</label>
+                  <input class="form-control" id="card-exp" maxlength="5" placeholder="MM/YY" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">CVV</label>
+                  <input class="form-control" id="card-cvv" maxlength="4" placeholder="CVV" required>
+                </div>
+                <div class="col-md-4 mb-3 d-flex align-items-center">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="save-card">
+                    <label class="form-check-label">Save card for later</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" id="back-to-address">Back</button>
+                <button class="btn btn-success" id="pay-now" type="button">Pay Now</button>
+              </div>
+            </form>
+          </div>
+
+          <div id="step-otp" class="d-none">
+            <h6>3) Verify Payment (OTP)</h6>
+            <p>An OTP has been sent to <span id="otp-phone">+91 9167343276</span>. (Demo OTP shown below)</p>
+            <div class="mb-3">
+              <label class="form-label">Enter OTP</label>
+              <input class="form-control" id="otp-input" maxlength="6" placeholder="Enter OTP">
+            </div>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-secondary" id="resend-otp">Resend OTP</button>
+              <button class="btn btn-success" id="verify-otp">Verify & Complete Order</button>
+            </div>
+            <div class="mt-3 small text-muted">Demo OTP: <strong id="demo-otp">123456</strong></div>
+          </div>
+
+          <div id="step-success" class="d-none text-center">
+            <h5 class="text-success">Order Placed Successfully!</h5>
+            <p>Thanks for shopping with Zayra Trenzy. Your order is confirmed.</p>
+            <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-4 text-center mt-5">
+    <div>© Zayra Trenzy • Contact: +91 9167343276</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Cart & checkout logic (INR)
+    const cart = [];
+    const cartCount = document.getElementById('cart-count');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    function formatINR(n){ return Number(n).toLocaleString('en-IN'); }
+
+    function updateBadge(){
+      const qty = cart.reduce((s,i)=>s+i.qty,0);
+      cartCount.textContent = qty;
+    }
+
+    function renderCart(){
+      if(cart.length===0){
+        cartItems.innerHTML = '<p class="text-center">Your cart is empty.</p>';
+        cartTotal.textContent = '0';
+        updateBadge();
+        return;
+      }
+      let html=''; let total=0;
+      cart.forEach((it,idx)=>{
+        total += it.price * it.qty;
+        html += `<div class="d-flex justify-content-between align-items-center border p-2 mb-2">
+                  <div>
+                    <strong>${it.name}</strong><br>
+                    ₹${formatINR(it.price)} × 
+                    <button class="btn btn-sm btn-outline-secondary ms-2 me-1" onclick="changeQty(${idx},-1)">-</button>
+                    <span id="qty-${idx}">${it.qty}</span>
+                    <button class="btn btn-sm btn-outline-secondary ms-1" onclick="changeQty(${idx},1)">+</button>
+                  </div>
+                  <div>
+                    <strong>₹${formatINR(it.price * it.qty)}</strong>
+                    <button class="btn btn-sm btn-danger ms-3" onclick="removeItem(${idx})"><i class="fas fa-trash"></i></button>
+                  </div>
+                </div>`;
+      });
+      cartItems.innerHTML = html;
+      cartTotal.textContent = formatINR(total);
+      updateBadge();
+    }
+
+    function changeQty(i, delta){
+      cart[i].qty += delta;
+      if(cart[i].qty <= 0) cart.splice(i,1);
+      renderCart();
+    }
+    function removeItem(i){ cart.splice(i,1); renderCart(); }
+    document.getElementById('clear-cart').addEventListener('click', ()=>{
+      cart.length = 0; renderCart();
     });
 
-    document.getElementById("cart-items").innerHTML = html;
-    document.getElementById("cart-total").innerText = total.toFixed(2);
-    document.getElementById("cart-count").innerText = cart.length;
-}
+    document.querySelectorAll('.add-to-cart').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const name = btn.dataset.name;
+        const price = parseFloat(btn.dataset.price);
+        const existing = cart.find(x=>x.name===name);
+        if(existing) existing.qty += 1;
+        else cart.push({name, price, qty:1});
+        renderCart();
+        // show cart modal for feedback
+        const modal = new bootstrap.Modal(document.getElementById('cartModal'));
+        modal.show();
+      });
+    });
 
-document.querySelectorAll(".add-to-cart").forEach(btn => {
-    btn.onclick = () => {
-        cart.push({
-            name: btn.dataset.name,
-            price: parseFloat(btn.dataset.price),
-            qty: 1
-        });
-        updateCart();
-    };
-});
+    // Checkout flow
+    document.getElementById('proceed-checkout').addEventListener('click', ()=>{
+      if(cart.length===0){ alert('Cart empty — add items first.'); return; }
+      const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
+      if(cartModal) cartModal.hide();
+      showStep('step-address');
+      new bootstrap.Modal(document.getElementById('checkoutModal')).show();
+    });
 
-function removeItem(i) {
-    cart.splice(i, 1);
-    updateCart();
-}
+    function showStep(id){
+      ['step-address','step-payment','step-otp','step-success'].forEach(s=>document.getElementById(s).classList.add('d-none'));
+      document.getElementById(id).classList.remove('d-none');
+    }
 
-document.getElementById("checkout-btn").onclick = () => {
-    alert("Checkout system ready! You can integrate UPI/Razorpay later.");
-};
-</script>
+    // Address -> Payment
+    document.getElementById('to-payment').addEventListener('click', ()=>{
+      const name = document.getElementById('addr-name').value.trim();
+      const phone = document.getElementById('addr-phone').value.trim();
+      const line1 = document.getElementById('addr-line1').value.trim();
+      const city = document.getElementById('addr-city').value.trim();
+      const state = document.getElementById('addr-state').value.trim();
+      const pin = document.getElementById('addr-pincode').value.trim();
+      if(!name||!phone||!line1||!city||!state||!pin){ alert('Please complete shipping address.'); return; }
+      showStep('step-payment');
+    });
 
+    document.getElementById('back-to-address').addEventListener('click', ()=> showStep('step-address'));
+
+    // Simulate payment -> OTP
+    let demoOtp = '123456';
+    function sendOtp(){
+      demoOtp = Math.floor(100000 + Math.random()*900000).toString();
+      document.getElementById('demo-otp').textContent = demoOtp;
+      document.getElementById('otp-phone').textContent = document.getElementById('addr-phone').value || '+91 9167343276';
+    }
+
+    document.getElementById('pay-now').addEventListener('click', ()=>{
+      const cardNum = document.getElementById('card-number').value.replace(/\s+/g,'');
+      const cardName = document.getElementById('card-name').value.trim();
+      const exp = document.getElementById('card-exp').value.trim();
+      const cvv = document.getElementById('card-cvv').value.trim();
+      if(!cardNum || cardNum.length<12 || !cardName || !exp || !cvv){ alert('Enter valid card details (demo).'); return; }
+      // simulate sending OTP
+      sendOtp();
+      showStep('step-otp');
+    });
+
+    document.getElementById('resend-otp').addEventListener('click', ()=>{
+      sendOtp();
+      alert('OTP resent (demo).');
+    });
+
+    document.getElementById('verify-otp').addEventListener('click', ()=>{
+      const entered = document.getElementById('otp-input').value.trim();
+      if(entered === demoOtp){
+        showStep('step-success');
+        // clear cart
+        cart.length = 0; renderCart();
+      } else {
+        alert('Incorrect OTP. Try again.');
+      }
+    });
+
+    // Format card input spacing UX
+    document.getElementById('card-number').addEventListener('input', (e)=>{
+      let v = e.target.value.replace(/\D/g,'').slice(0,16);
+      e.target.value = v.replace(/(.{4})/g,'$1 ').trim();
+    });
+
+    // init
+    renderCart();
+  </script>
 </body>
 </html>
-
